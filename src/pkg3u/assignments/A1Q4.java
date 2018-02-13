@@ -1,10 +1,4 @@
-import becker.robots.City;
-import becker.robots.Direction;
-import becker.robots.Robot;
-import becker.robots.RobotSE;
-import becker.robots.Thing;
-import becker.robots.Wall;
-import java.awt.Color;
+
 
 
 
@@ -14,6 +8,14 @@ import java.awt.Color;
  * and open the template in the editor.
  */
 package pkg3u.assignments;
+
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot;
+import becker.robots.RobotSE;
+import becker.robots.Thing;
+import becker.robots.Wall;
+import java.awt.Color;
 
 /**
  *
@@ -28,17 +30,22 @@ public class A1Q4 {
         // TODO code application logic here
         
         City MajorFat = new City();
+        // the City is created
         
         RobotSE AdmiralFat = new RobotSE(MajorFat, 0, 0, Direction.SOUTH);
+        // Robot 1 is created
         
         RobotSE ViceAdmiralFat = new RobotSE(MajorFat, 0, 1, Direction.SOUTH);
+        // Robot 2 is created
         
         new Wall(MajorFat, 0, 1, Direction.WEST);
         
         new Wall(MajorFat, 1, 1, Direction.WEST);
         
         new Wall(MajorFat, 1, 1, Direction.SOUTH);
+        // The wall between them is created
         
+        // The are moving to find eachother
         ViceAdmiralFat.move();
         
         AdmiralFat.move(2);
@@ -58,6 +65,7 @@ public class A1Q4 {
         ViceAdmiralFat.move();
         
         AdmiralFat.move();
+        // They have phased into one :)
         
     }
     

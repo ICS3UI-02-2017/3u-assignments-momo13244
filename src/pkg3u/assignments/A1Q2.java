@@ -28,6 +28,7 @@ public class A1Q2 {
         
         RobotSE fatSenior = new RobotSE(MajorFat, 1, 2, Direction.SOUTH);
         
+        // Making the house for fatSenior
         new Wall(MajorFat, 1, 1, Direction.WEST);
         
         new Wall(MajorFat, 2, 1, Direction.WEST);
@@ -43,7 +44,9 @@ public class A1Q2 {
         new Wall(MajorFat, 2, 1, Direction.SOUTH);
         
         new Thing(MajorFat, 2, 2);
+        // The newsPaper for coolSenior
         
+        // fatSenior walking out to collect his news paper
         fatSenior.turnRight();
         
         fatSenior.move(1);
@@ -57,6 +60,7 @@ public class A1Q2 {
         fatSenior.move(1);
         
         fatSenior.pickThing();
+        //fatSenior Got his Newspaper
         
         fatSenior.turnAround();
         
@@ -71,6 +75,9 @@ public class A1Q2 {
         fatSenior.move(1);
         
         fatSenior.turnRight();
+        // fatSenior is now back home enjoying his coffee while reading newspaper
+        
+      
         
     }
 }
