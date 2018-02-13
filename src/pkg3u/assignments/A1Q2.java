@@ -26,6 +26,51 @@ public class A1Q2 {
         
          City MajorFat = new City();
         
-        RobotSE fatjunior = new RobotSE(MajorFat, 0, 2, Direction.WEST);
+        RobotSE fatSenior = new RobotSE(MajorFat, 1, 2, Direction.SOUTH);
+        
+        new Wall(MajorFat, 1, 1, Direction.WEST);
+        
+        new Wall(MajorFat, 2, 1, Direction.WEST);
+        
+        new Wall(MajorFat, 1, 1, Direction.NORTH);
+        
+        new Wall(MajorFat, 1, 2, Direction.NORTH);
+        
+        new Wall(MajorFat, 1, 2, Direction.EAST);
+        
+        new Wall(MajorFat, 1, 2, Direction.SOUTH);
+        
+        new Wall(MajorFat, 2, 1, Direction.SOUTH);
+        
+        new Thing(MajorFat, 2, 2);
+        
+        fatSenior.turnRight();
+        
+        fatSenior.move(1);
+        
+        fatSenior.turnLeft();
+        
+        fatSenior.move(1);
+        
+        fatSenior.turnLeft();
+        
+        fatSenior.move(1);
+        
+        fatSenior.pickThing();
+        
+        fatSenior.turnAround();
+        
+        fatSenior.move(1);
+        
+        fatSenior.turnRight();
+        
+        fatSenior.move(1);
+        
+        fatSenior.turnRight();
+        
+        fatSenior.move(1);
+        
+        fatSenior.turnRight();
+        
     }
 }
