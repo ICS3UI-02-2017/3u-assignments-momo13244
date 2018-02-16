@@ -41,15 +41,13 @@ public class A1Q1 {
 
         while (ColonelStank.getAvenue() != 12) {
             ColonelStank.move();
-            if (ColonelStank.canPickThing()) {
+            if (ColonelStank.countThingsInBackpack() < 7) {
                 ColonelStank.pickThing();
-            if (ColonelStank.countThingsInBackpack() == 7)
-                ColonelStank.pickThing();
-
+            } else {
+                if (ColonelStank.countThingsInBackpack() > 7){
+                    
             }
-
-
-            }
+          }
         }
     }
 }
