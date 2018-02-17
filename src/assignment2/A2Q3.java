@@ -12,6 +12,7 @@ import static becker.robots.Direction.NORTH;
 import static becker.robots.Direction.SOUTH;
 import static becker.robots.Direction.WEST;
 import becker.robots.RobotSE;
+import becker.robots.Thing;
 
 /**
  *
@@ -25,44 +26,96 @@ public class A2Q3 {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        // Create City
-        City ToonTown = new City();
+        City Origin = new City();
         
-        // Create Robot
-        RobotSE SirFat = new RobotSE(ToonTown, -6, -7, Direction.NORTH);
+        RobotSE Gary = new RobotSE(Origin, 5, 5, Direction.SOUTH);
         
-        // Southern of the Street Axis
-        while (SirFat.getStreet() > 0){
-            if (SirFat.getDirection() == EAST){
-                SirFat.turnLeft();
-            }
-            if (SirFat.getDirection() == SOUTH){
-                SirFat.turnAround();
-            } if (SirFat.getStreet() != 0){    
-                SirFat.move();
-            } if (SirFat.getStreet() == 0){
-                   SirFat.turnLeft();  
-                   
-            // Northern of the StreetAxis
-        } while (SirFat.getStreet() < 0) {
-             
-            if (SirFat.getDirection() == NORTH){
-                SirFat.turnAround();
-            }
-            if (SirFat.getDirection() == WEST){
-                SirFat.turnLeft();
-            } 
-            if (SirFat.getStreet() != 0){    
-                SirFat.move();
-            }if (SirFat.getStreet() == 0){
-                SirFat.turnLeft();
         
-    }  if (SirFat.getStreet() == 0){
-          SirFat.turnLeft();
-          
-    }  while (SirFat.getAvenue() != 0){
-        SirFat.move();
-    }
-
+        // Under Street Zero
+        while (Gary.getStreet() > 0){
+            
+            // the postive Positive sector. Bottom right of origin.
+            if (Gary.getAvenue() > 0){
+            
+                if (Gary.getDirection() == EAST){
+                    Gary.turnLeft();
+                }
+                if (Gary.getDirection() == SOUTH){
+                    Gary.turnAround();
+                }
+                if (Gary.getDirection() == WEST){
+                    Gary.turnRight();
+                }
+                if (Gary.getStreet() != 0){
+                    Gary.move();
+                } 
+                if (Gary.getStreet() == 0){
+                    Gary.turnLeft(); 
+                }
+            } // The positive negative sector. Bottom Left of the origin. 
+            if (Gary.getAvenue() < 0){
+            
+                if (Gary.getDirection() == WEST){
+                    Gary.turnRight();
+                }
+                if (Gary.getDirection() == SOUTH){
+                    Gary.turnAround();
+                }
+                if (Gary.getDirection() == EAST){
+                    Gary.turnLeft();
+                }
+                if (Gary.getStreet() != 0){
+                    Gary.move();
+                } 
+                if (Gary.getStreet() == 0){
+                    Gary.turnRight(); 
+                }           
+            }     
+        }
+        // Above street Zero
+        while (Gary.getStreet() < 0){
+            
+            // The negative positive sector. Top right of origin
+            if (Gary.getAvenue() > 0){
+            
+                if (Gary.getDirection() == EAST){
+                    Gary.turnRight();
+                }
+                if (Gary.getDirection() == NORTH){
+                    Gary.turnAround();
+                }
+                if (Gary.getDirection() == WEST){
+                    Gary.turnLeft();
+                }
+                if (Gary.getStreet() != 0){
+                    Gary.move();
+                } 
+                if (Gary.getStreet() == 0){
+                    Gary.turnRight(); 
+                }
+        }   // The negative negative sector. Top left of origin
+            if (Gary.getAvenue() < 0){
+            
+                if (Gary.getDirection() == WEST){
+                    Gary.turnLeft();
+                }
+                if (Gary.getDirection() == NORTH){
+                    Gary.turnAround();
+                }
+                if (Gary.getDirection() == EAST){
+                    Gary.turnRight();
+                }
+                if (Gary.getStreet() != 0){
+                    Gary.move();
+                } 
+                if (Gary.getStreet() == 0){
+                    Gary.turnLeft(); 
+                }
+            }    
+        }
+        // Move to origin
+        while (Gary.getAvenue() != 0){
+            Gary.move();
+        }
     }
 }
