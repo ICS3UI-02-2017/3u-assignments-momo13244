@@ -13,7 +13,7 @@ import becker.robots.Thing;
  *
  * @author elmam0030
  */
-public class A1Q1 {
+public class A2Q1 {
 
     /**
      * @param args the command line arguments

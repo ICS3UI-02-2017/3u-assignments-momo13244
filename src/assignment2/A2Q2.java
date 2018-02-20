@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package assignment2;
@@ -12,7 +13,7 @@ import becker.robots.Wall;
 
 /**
  *
- * @author elmam0030
+ * @author Mohamad
  */
 public class A2Q2 {
 
@@ -21,39 +22,42 @@ public class A2Q2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-        // create city
+        
+        // create City
         City MajorStank = new City();
+        
+        RobotSE MajorOof = new RobotSE(MajorStank, 4, 1, Direction.EAST);
+        
+        new Wall(MajorStank, 4, 1, Direction.SOUTH);
+        new Wall(MajorStank, 4, 2, Direction.SOUTH);
+        new Wall(MajorStank, 4, 3, Direction.SOUTH);
+        new Wall(MajorStank, 4, 4, Direction.SOUTH);
+        new Wall(MajorStank, 4, 5, Direction.SOUTH);
+        new Wall(MajorStank, 4, 6, Direction.SOUTH);
+        new Wall(MajorStank, 4, 7, Direction.SOUTH);
+        new Wall(MajorStank, 4, 8, Direction.SOUTH);
+        new Wall(MajorStank, 4, 9, Direction.SOUTH);
+        new Wall(MajorStank, 4, 1, Direction.EAST);
+        new Wall(MajorStank, 4, 2, Direction.EAST);
+        new Wall(MajorStank, 4, 4, Direction.EAST);
+        new Wall(MajorStank, 4, 7, Direction.EAST);
+        new Thing(MajorStank, 4, 9);
 
-        // creat robot
-        RobotSE ColonelStank = new RobotSE(MajorStank, 1, 1, Direction.EAST);
-
-        new Wall(MajorStank, 1, 1, Direction.SOUTH);
-        new Wall(MajorStank, 1, 2, Direction.SOUTH);
-        new Wall(MajorStank, 1, 3, Direction.SOUTH);
-        new Wall(MajorStank, 1, 4, Direction.SOUTH);
-        new Wall(MajorStank, 1, 5, Direction.SOUTH);
-        new Wall(MajorStank, 1, 6, Direction.SOUTH);
-        new Wall(MajorStank, 1, 7, Direction.SOUTH);
-        new Wall(MajorStank, 1, 8, Direction.SOUTH);
-        new Wall(MajorStank, 1, 9, Direction.SOUTH);
-        new Wall(MajorStank, 1, 1, Direction.EAST);
-        new Wall(MajorStank, 1, 2, Direction.EAST);
-        new Wall(MajorStank, 1, 4, Direction.EAST);
-        new Wall(MajorStank, 1, 7, Direction.EAST);
-        new Thing(MajorStank, 1, 9);
-
-        while (ColonelStank.getAvenue() != 9) {
-            ColonelStank.turnLeft();
-            if (ColonelStank.getStreet() == 1) {
-                ColonelStank.move();
-            }
-            if (ColonelStank.getStreet() == 0) {
-                ColonelStank.turnRight();
-                ColonelStank.move();
-            }
-
+        while(MajorOof.getAvenue() != 9){
+            
+        if (!MajorOof.frontIsClear()){
+            MajorOof.turnLeft();
+        } else if (MajorOof.frontIsClear()){
+            MajorOof.move();
+        } if (MajorOof.getStreet() == 3){
+            MajorOof.turnRight();
+              
         }
-
+            
+        }
+        
+        
     }
 }
+
+
