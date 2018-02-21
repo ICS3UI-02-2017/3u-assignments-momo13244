@@ -24,10 +24,10 @@ public class A2Q1 {
         // create city
         City MajorStank = new City();
 
-        // creat robot
+        // create robot
         RobotSE ColonelStank = new RobotSE(MajorStank, 1, 1, Direction.EAST);
 
-        // creat things
+        // create things
         new Thing(MajorStank, 1, 2);
         new Thing(MajorStank, 1, 3);
         new Thing(MajorStank, 1, 4);
@@ -39,6 +39,7 @@ public class A2Q1 {
         new Thing(MajorStank, 1, 10);
         new Thing(MajorStank, 1, 11);
 
+        // make this boy move
         while (ColonelStank.getAvenue() != 12) {
             ColonelStank.move();
             if (ColonelStank.countThingsInBackpack() < 7) {

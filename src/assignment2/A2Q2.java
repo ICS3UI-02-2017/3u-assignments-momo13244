@@ -41,6 +41,7 @@ public class A2Q2 {
         new Wall(MajorStank, 4, 2, Direction.EAST);
         new Wall(MajorStank, 4, 4, Direction.EAST);
         new Wall(MajorStank, 4, 7, Direction.EAST);
+       
         new Thing(MajorStank, 4, 9);
 
         while(MajorOof.getAvenue() != 9){
@@ -49,7 +50,7 @@ public class A2Q2 {
             MajorOof.turnLeft();
         } else if (MajorOof.frontIsClear()){
             MajorOof.move();
-        } if (MajorOof.getStreet() == 3){
+        } if (MajorOof.getStreet() <= 3){
             MajorOof.turnRight();
               
         }

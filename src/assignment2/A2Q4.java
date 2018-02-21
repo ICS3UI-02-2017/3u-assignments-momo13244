@@ -23,12 +23,13 @@ public class A2Q4 {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        // create a city
         City Colombia = new City();
         
+        // Create a robot
         RobotSE Maria = new RobotSE(Colombia, 1, 2, Direction.EAST);
-        
-        Maria.setLabel("Maria");      
-        
+              
+        // Make the castle
         new Wall(Colombia, 1, 1, Direction.EAST);
         new Wall(Colombia, 1, 1, Direction.WEST);
         new Wall(Colombia, 1, 1, Direction.SOUTH);
@@ -56,12 +57,21 @@ public class A2Q4 {
         new Wall(Colombia, 3, 2, Direction.SOUTH);
         
         while (true){
-            Maria.move();
-            
+        
+            if (Maria.frontIsClear()){
+                Maria.move();
+            } //Go around the tower
             if (!Maria.frontIsClear()){
                 Maria.turnLeft();
+                Maria.move();
+                Maria.turnRight();
+                Maria.move(2);
+                Maria.turnRight();
+                Maria.move(2);
+                Maria.turnRight();
+                Maria.move();
+                Maria.turnLeft();
             }
-            if ()
         }
         
     }

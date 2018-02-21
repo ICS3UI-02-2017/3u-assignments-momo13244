@@ -26,8 +26,10 @@ public class A2Q3 {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        // create a city
         City Origin = new City();
         
+        // create a gary
         RobotSE Gary = new RobotSE(Origin, -5, -5, Direction.SOUTH);
         
         
