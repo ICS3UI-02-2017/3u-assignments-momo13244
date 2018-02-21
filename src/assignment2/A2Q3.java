@@ -28,7 +28,7 @@ public class A2Q3 {
         
         City Origin = new City();
         
-        RobotSE Gary = new RobotSE(Origin, 5, 5, Direction.SOUTH);
+        RobotSE Gary = new RobotSE(Origin, -5, -5, Direction.SOUTH);
         
         
         // Under Street Zero

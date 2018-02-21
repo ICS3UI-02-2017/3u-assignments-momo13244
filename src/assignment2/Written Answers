@@ -1,0 +1,41 @@
+1.
+    Robot is on (1,5)
+        a) This.getAvenue() > 0
+            True
+        b) This.getAvenue() <= 5\
+            True
+        c) This.getStreet() != 1
+            False
+        d) !(This.getStreet() == 1)
+            False
+        e) this.frontIsClear()
+            False
+        f) !this.frontIsClear() 
+            True
+        g) this.frontIsClear() == false
+            True
+ 2.
+Statement 1
+if(karel.canPickThing())                                    
+{                                                        
+    karel.turnRight();                               
+} else {                                                   
+    karel.turnLeft();                                
+}  
+
+Statement 2
+if(!karel.canPickThing())
+{                                                                          
+    karel.turnLeft();
+} else {                                                                                                                          
+    karel.turnRight();
+}   
+
+They are the same. Lets say that karel is not standing on a thing.
+The output for both statements would be karel turning left. Because the first 
+statement says that if karel is standing (Which he is not) he will turn right 
+but since he is not standing on something it will skip to turnleft.
+While statement 2 says that if he is not standing on something he will turn left.
+and since he is not the code while turn him left and skip the else command.
+Therefore, Karel will turn left.
+
