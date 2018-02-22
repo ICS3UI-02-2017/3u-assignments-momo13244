@@ -137,9 +137,11 @@ public class A2_Challenge {
         new Thing(MyDriveway, 3, 1);
                
         // Make him clean the driveway
-        while (Gargoon.getStreet() != 9){
-            Gargoon.move();
-            if ()
+        while (true){
+            
+            if (Gargoon){
+                
+            }
         }
         
         
