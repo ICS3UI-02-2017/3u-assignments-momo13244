@@ -6,6 +6,7 @@ package assignment2;
 
 import becker.robots.City;
 import becker.robots.Direction;
+import becker.robots.IPredicate;
 import becker.robots.RobotSE;
 import becker.robots.Thing;
 import becker.robots.Wall;
@@ -26,8 +27,8 @@ public class A2_Challenge {
         City MyDriveway = new City();
         
         // create 2 robots
-        RobotSE Gargoon = new RobotSE(MyDriveway, 0, 2, Direction.SOUTH);
-        RobotSE Monmoon = new RobotSE(MyDriveway, 0, 2, Direction.SOUTH);
+        RobotSE gargoon = new RobotSE(MyDriveway, 0, 2, Direction.SOUTH);
+        RobotSE monmoon = new RobotSE(MyDriveway, 0, 2, Direction.SOUTH);
         
         //Create the Driveway
         new Wall(MyDriveway, 0, 0, Direction.WEST);
@@ -138,15 +139,27 @@ public class A2_Challenge {
                
         // Make him clean the driveway
         while (true){
-            
-            if (Gargoon){
-                
+                   
+            if (gargoon.frontIsClear()){
+                gargoon.move();               
             }
-        }
-        
-        
-        
-        
-        
-    }
+            if (!gargoon.isBesideThing(IPredicate.aWall)){
+                gargoon.turnLeft();
+            }
+            if (gargoon.getAvenue() > 2){
+                if (!gargoon.frontIsClear()){
+                    gargoon.turnRight();
+                }
+                if (gargoon.canPickThing()){
+                gargoon.pickThing();
+                }               
+            }
+            if (gargoon.countThingsInBackpack() > 0){
+                if (gargoon.getAvenue() < 3){
+                    gargoon.putThing();
+                }
+            }                    
+        } if (true){ 
+ 
+    }  
 }
