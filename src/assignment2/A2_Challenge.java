@@ -138,28 +138,29 @@ public class A2_Challenge {
         new Thing(MyDriveway, 3, 1);
                
         // Make him clean the driveway
-        while (true){
-                   
-            if (gargoon.frontIsClear()){
-                gargoon.move();               
-            }
-            if (!gargoon.isBesideThing(IPredicate.aWall)){
-                gargoon.turnLeft();
-            }
-            if (gargoon.getAvenue() > 2){
-                if (!gargoon.frontIsClear()){
-                    gargoon.turnRight();
+        while (gargoon.frontIsClear()){
+            gargoon.move();
+            
+            while (gargoon.getAvenue() > 2){
+                if(gargoon.canPickThing()){
+                    gargoon.pickThing();
                 }
-                if (gargoon.canPickThing()){
-                gargoon.pickThing();
-                }               
-            }
-            if (gargoon.countThingsInBackpack() > 0){
-                if (gargoon.getAvenue() < 3){
-                    gargoon.putThing();
+                if (gargoon.frontIsClear()){
+                    gargoon.move();
+                } else if (!gargoon.frontIsClear()){
+                    gargoon.turnAround();
                 }
-            }                    
-        } if (true){ 
- 
-    }  
+            }
+            gargoon.turnLeft();
+            if (gargoon.isBesideThing(IPredicate.aWall)){
+                gargoon.turnRight();
+            }
+            }  
+        while (monmoon.frontIsClear()){
+            monmoon.move();
+            if (monmoon.canPickThing()){
+                monmoon.pickThing();
+            }
+        }
+        }       
 }
