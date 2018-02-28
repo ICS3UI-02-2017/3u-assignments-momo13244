@@ -143,6 +143,7 @@ public class A2_Challenge {
             
             while (gargoon.getAvenue() > 2){
                 if(gargoon.canPickThing()){
+                    // pick up thing
                     gargoon.pickThing();
                 }
                 if (gargoon.frontIsClear()){
@@ -155,7 +156,8 @@ public class A2_Challenge {
             if (gargoon.isBesideThing(IPredicate.aWall)){
                 gargoon.turnRight();
             }
-            }  
+            }
+        // make monmoon move and pick up the snow
         while (monmoon.frontIsClear()){
             monmoon.move();
             if (monmoon.canPickThing()){
