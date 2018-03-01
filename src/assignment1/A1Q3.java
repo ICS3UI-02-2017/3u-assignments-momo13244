@@ -8,7 +8,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg3u.assignments.assignment1;
+package assignment1;
 
 import becker.robots.City;
 import java.util.Set;
