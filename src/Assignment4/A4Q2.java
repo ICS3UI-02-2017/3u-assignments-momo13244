@@ -25,6 +25,8 @@ public class A4Q2 {
         int inches = input.nextInt();
         
         
+        
+        
     }
     
 }
