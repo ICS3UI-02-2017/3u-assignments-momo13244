@@ -22,8 +22,12 @@ public class A4Q2 {
         // ask for measurement
         System.out.println("Please enter the measurement in inches you wish to convert");
         // read measurement
-        int inches = input.nextInt();
+        double inches = input.nextInt();
         
+        // make the calculator
+        double answer = (inches * 2.54);
+        
+        System.out.println("Your Inches converted is " + answer + " cm");
         
         
         
