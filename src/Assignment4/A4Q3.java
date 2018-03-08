@@ -29,7 +29,7 @@ public class A4Q3 {
         
         double line4 = input.nextDouble();
         
-        System.out.println("Your numbers were" + line1 + "," + line2 + "," +);
+        System.out.println("Your numbers were " + line1 + ", " + line2 + ", " + line3 + ", " + "and " + line4);
               
         
         
