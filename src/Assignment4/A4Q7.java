@@ -27,10 +27,11 @@ public class A4Q7 {
             
             playerA = input.nextInt();
             
-            if (playerA < 12 && playerA > 2){
-              
+            if (playerA <= 12 && playerA >= 2){
+                
+                if (playerL < 100){
                 playerL = (playerL + playerA);
-            
+               
                 System.out.println("you are now on square: " + playerL);
             
                 if (playerL == 9){
@@ -50,11 +51,18 @@ public class A4Q7 {
                 }
                 if (playerL == 99){
                 playerL = (playerL - 22);
-                }  
+                }
+                if (playerL == 100){
+                System.out.println("you win!");
+                break;
             }
-            
-            
+            }
+            if (playerA > 12 || playerA < 2){
+                System.out.println("You quit!");
+                break;
+                }           
             
         }
     }
+    
 }
