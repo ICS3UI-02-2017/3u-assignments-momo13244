@@ -23,15 +23,19 @@ public class A4Q7 {
         int playerA = 1;
         
         // make the game
-        while (playerL != 100 ){
+        while (true){
             // ask for sum of dice
             System.out.print( "Enter sum of dice: ");
-            // get the sum
+            // store the sum
             playerA = input.nextInt();
+            if (playerA > 12 || playerA < 2){
+                System.out.println("You quit!");
+                break;
+                }  
             // start game
             if (playerA <= 12 && playerA >= 2){
                 // add sum of dice to location of player
-                if (playerL < 100){
+                if (playerL < 88){
                 playerL = (playerL + playerA);
                 // display location of player
                 System.out.println("you are now on square: " + playerL);
@@ -59,20 +63,17 @@ public class A4Q7 {
                 if (playerL == 99){
                 playerL = (playerL - 22);
                 System.out.println("you are now on square: " + playerL);
-                }  
+                } 
+                    
                 // if player is on square 100 end the game.
                 if (playerL == 100){
                 System.out.println("you win!");
                 break;
-            }
                 }
-            if (playerA > 12 || playerA < 2){
-                System.out.println("You quit!");
-                break;
-                }           
+                }                   
             
-        }
-    }
+            }
+            }
     }
     
 }
