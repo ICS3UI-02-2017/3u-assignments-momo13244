@@ -70,6 +70,7 @@ public class A4Q7 {
                 System.out.println("you win!");
                 break;
                 }
+                
                 }                   
             
             }

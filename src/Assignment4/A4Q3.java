@@ -20,7 +20,7 @@ public class A4Q3 {
         Scanner input = new Scanner(System.in);  
         // speak
         System.out.println("Please enter in 4 numbers on seperate lines");
-        
+        // store all the numbers
         double line1 = input.nextDouble();
         
         double line2 = input.nextDouble();
@@ -28,7 +28,7 @@ public class A4Q3 {
         double line3 = input.nextDouble();
         
         double line4 = input.nextDouble();
-        
+        // display all the numbers
         System.out.println("Your numbers were " + line1 + ", " + line2 + ", " + line3 + ", " + "and " + line4);
               
         
