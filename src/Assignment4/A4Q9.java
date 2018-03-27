@@ -28,35 +28,44 @@ public class A4Q9 extends javax.swing.JFrame {
 
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        result = new javax.swing.JTextField();
+        add = new javax.swing.JButton();
+        sub = new javax.swing.JButton();
+        div = new javax.swing.JButton();
+        mul = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jButton1.setText("Add");
-
-        jButton2.setText("Sub");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        add.setText("Add");
+        add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                addActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Div");
+        sub.setText("Sub");
+        sub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Mul");
+        div.setText("Div");
+        div.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divActionPerformed(evt);
+            }
+        });
+
+        mul.setText("Mul");
+        mul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mulActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("First number");
 
@@ -72,13 +81,13 @@ public class A4Q9 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(jButton1)
+                        .addComponent(add)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(sub)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(div)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4))
+                        .addComponent(mul))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +96,7 @@ public class A4Q9 extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3)
+                            .addComponent(result)
                             .addComponent(jTextField2)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(178, Short.MAX_VALUE))
@@ -105,23 +114,87 @@ public class A4Q9 extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(add)
+                    .addComponent(sub)
+                    .addComponent(div)
+                    .addComponent(mul))
                 .addGap(57, 57, 57))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
+        // get the number in the first text box
+        String firstN = jTextField1.getText();
+        // get the number in the second text box
+        String firstN2 = jTextField2.getText();
+        
+        // Convert string to integer
+        int number1 = Integer.parseInt(firstN);
+        int number2 = Integer.parseInt(firstN2);
+        // calculate the numbers
+        int result1 = (number1 - number2);
+        
+        // output the text
+        result.setText("" + result1);
+    }//GEN-LAST:event_subActionPerformed
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        // get the number in the first text box
+        String firstN = jTextField1.getText();
+        // get the number in the second text box
+        String firstN2 = jTextField2.getText();
+        
+        // Convert string to integer
+        int number1 = Integer.parseInt(firstN);
+        int number2 = Integer.parseInt(firstN2);
+        // calculate the numbers
+        int result1 = (number1 + number2);
+        
+        // output the number
+        result.setText("" + result1);
+        
+        
+        
+        
+    }//GEN-LAST:event_addActionPerformed
+
+    private void divActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divActionPerformed
+        // get the number in the first text box
+        String firstN = jTextField1.getText();
+        // get the number in the second text box
+        String firstN2 = jTextField2.getText();
+        
+        // Convert string to integer
+        int number1 = Integer.parseInt(firstN);
+        int number2 = Integer.parseInt(firstN2);
+        // calculate the numbers
+        int result1 = (number1 / number2);
+        
+        // output the numbers
+        result.setText("" + result1);
+    }//GEN-LAST:event_divActionPerformed
+
+    private void mulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mulActionPerformed
+        // get the number in the first text box
+        String firstN = jTextField1.getText();
+        // get the number in the second text box
+        String firstN2 = jTextField2.getText();
+        
+        // Convert string to integer
+        int number1 = Integer.parseInt(firstN);
+        int number2 = Integer.parseInt(firstN2);
+        // calculate the numbers
+        int result1 = (number1 * number2);
+        
+        // output the numbers
+        result.setText("" + result1);
+    }//GEN-LAST:event_mulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,15 +231,15 @@ public class A4Q9 extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton add;
+    private javax.swing.JButton div;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton mul;
+    private javax.swing.JTextField result;
+    private javax.swing.JButton sub;
     // End of variables declaration//GEN-END:variables
 }

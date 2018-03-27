@@ -26,7 +26,7 @@ public class UbbiDubbi {
             origWord = origWord.toLowerCase();
             
             // do we start with a vowel
-            if(origWord.startsWith(`"a") || origWord.startsWith("e") || origWord.startsWith("i") || origWord.startsWith("o") || origWord.startsWith("u")){
+            if(origWord.startsWith("a") || origWord.startsWith("e") || origWord.startsWith("i") || origWord.startsWith("o") || origWord.startsWith("u")){
                 // stick ay on the end
                 String transWord = origWord + "ay";
                 System.out.println(origWord + " in pig latin is " + transWord);
