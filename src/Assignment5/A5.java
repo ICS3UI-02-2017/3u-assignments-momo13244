@@ -24,7 +24,7 @@ public class A5 {
             String origWord = input.nextLine();
             // sanatize the input
             origWord = origWord.toLowerCase();
-            
+            String transWord = "";
             // Scan if the word starts with a vowel
             if (origWord.startsWith("a") ||
                     origWord.startsWith("e") || 
@@ -32,10 +32,10 @@ public class A5 {
                     origWord.startsWith("o") ||
                     origWord.startsWith("u")) {
                         // add the ub
-                        String transWord = ("ub" + origWord);
+                        transWord = ("ub" + origWord);
                         System.out.println(transWord);
             }else{
-                // Look for a vowel in the work
+                // Look for a vowel in the word
                 int length = origWord.length();
                 // make a for loop to check the character
                 for (int i = 0; i < length; i++){
@@ -49,12 +49,12 @@ public class A5 {
                         String start = origWord.substring(0, i);
                         String end = origWord.substring(i);
                                               
-                        String transword = (start + "ub" + end);
-                        System.out.println(transword);
+                        transWord = (start + "ub" + end); 
                         
-                        break;
                 }
+                    break;
                 }
+                System.out.println(transWord);
             }           
         } 
     }
