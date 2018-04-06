@@ -33,7 +33,7 @@ public class A5 {
                     origWord.startsWith("u")) {
                         // add the ub
                         transWord = ("ub" + origWord);
-                        System.out.println(transWord);
+                        
             }else{
                 // Look for a vowel in the word
                 int length = origWord.length();
@@ -45,17 +45,16 @@ public class A5 {
                             origWord.charAt(i) == 'i' ||
                             origWord.charAt(i) == 'o' ||
                             origWord.charAt(i) == 'u'){
-                    // break the word apart at the vowel
-                        String start = origWord.substring(0, i);
-                        String end = origWord.substring(i);
-                                              
-                        transWord = (start + "ub" + end); 
                         
-                }
-                    break;
+                        transWord = (transWord + "ub" + origWord.charAt(i));
+       
+                }else{
+                       transWord = (transWord + origWord.charAt(i)); 
+                    }                    
                 }
                 System.out.println(transWord);
-            }           
+                
+            }  
         } 
     }
 }
