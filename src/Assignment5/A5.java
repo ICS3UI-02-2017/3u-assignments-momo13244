@@ -29,16 +29,6 @@ public class A5 {
             String translate = " " + origWord;
             //sanitize the input
             origWord = origWord.toLowerCase();
-            // check to see if word starts with vowel
-            if (origWord.startsWith("a") || 
-                    origWord.startsWith("e") || 
-                    origWord.startsWith("i") || 
-                    origWord.startsWith("o") || 
-                    origWord.startsWith("u")) {
-                // put in the ub at the end of the word
-                String translate2 = "ub" + origWord;
-                System.out.println(origWord + " in Ubbi Dubbi is " + translate2);
-            } else {
                 //count how many letters are in the word 
                 int length = translate.length();
                 // create a for loop for the translator
@@ -73,5 +63,5 @@ public class A5 {
                 break;
             }
         }
-    }
+    
 }

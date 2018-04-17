@@ -4,6 +4,8 @@
  */
 package Assignment6;
 
+import java.util.Scanner;
+
 /**
  *
  * @author elmam0030
@@ -14,6 +16,8 @@ public class A6Q1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Scan
+        Scanner input = new Scanner(System.in);
+        
     }
 }
