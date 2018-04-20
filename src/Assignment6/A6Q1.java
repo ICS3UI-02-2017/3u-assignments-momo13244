@@ -19,5 +19,19 @@ public class A6Q1 {
         // Scan
         Scanner input = new Scanner(System.in);
         
+        // ask for number of students
+        System.out.println("How many students are in the class?");       
+        int i = input.nextInt();
+        
+        // make the array for the averages
+        double[] averages = new double[i];
+        
+        System.out.println("What are the averages?");       
+        
+        for( int g; g < 3; g++){
+            
+        }
+        
+        
     }
 }
