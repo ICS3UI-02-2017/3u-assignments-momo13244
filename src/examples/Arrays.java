@@ -40,7 +40,7 @@ public class Arrays {
         // output stuff
         System.out.println("prom costs " + sum);
         // take the sum divide by 35, always round
-        double ticketsNeeded("please enter the six costs for prom");
+        
         
        
     }
