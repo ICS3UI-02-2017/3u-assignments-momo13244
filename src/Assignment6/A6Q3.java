@@ -19,12 +19,19 @@ public class A6Q3 {
     public static void main(String[] args) {
         // Scan
         Scanner input = new Scanner(System.in);
+        // ask for the two integers
+        System.out.println("Enter two integers:");
         
+        int numbers[] = new int[2];
         
+        numbers[0] = input.nextInt();
+        numbers[1] = input.nextInt();
         
-        
-        
-        
+        if(numbers[0] > numbers[1]){
+            numbers[1] = numbers[0];
+            numbers[0] = numbers[1];
+        }
+        System.out.print("the integers in ascending order are: " + numbers[0] + " " + numbers[1]);
     }
     
 }
