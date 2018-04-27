@@ -63,5 +63,12 @@ public class A6Q5 {
             
             System.out.print(mark[g] + " ");
         }
+        
+        int non = mark.length / 2;
+        System.out.println(non);
+        
+        
+        
+        
     }
 }
