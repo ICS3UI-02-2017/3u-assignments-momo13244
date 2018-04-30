@@ -34,12 +34,12 @@ public class A6Q4 {
             // create a another for loop for x+1
             for(int g = i+1; g < 10; g++){
                 // assign spots of arrays to doubles
-            double spotX = mark[i];
-            double spotY = mark[g];
+            double X = mark[i];
+            double Y = mark[g];
             // if spotx is greater than spoty, switch them
-            if(spotX > spotY){
-                mark[g] = spotX;
-                mark[i] = spotY;
+            if(X > Y){
+                mark[g] = X;
+                mark[i] = Y;
             }
         }            
         }
