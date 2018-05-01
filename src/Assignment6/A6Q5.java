@@ -60,14 +60,31 @@ public class A6Q5 {
         
         
         for(int g = 0; g < mark.length; g++){ 
-            
+            // print all the marks
             System.out.print(mark[g] + " ");
         }
-        
+        // lower line down 1
+        System.out.println("");
+        // if the length of the array is even
         if((mark.length % 2) == 0){
-            
+           // divide it in half
+           int half = mark.length / 2;
+           //make the doubles to express the midpoints
+           double nae = mark[half];
+           double naeNae = mark[half +1];
+           // calculate average of midpoint
+           nae = nae + naeNae;
+           nae = nae/2;
+           // print the median
+           System.out.println("The median of this array is " + nae);
         }
-        
+        // if the array length is odd
+        if((mark.length % 2) != 0){
+            // divide array in half
+            int half = mark.length / 2;
+            // print median
+            System.out.println("The median of this array is " + mark[half]);
+        }
         
             
                 
