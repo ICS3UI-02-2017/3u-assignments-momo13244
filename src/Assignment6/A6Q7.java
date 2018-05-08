@@ -24,8 +24,8 @@ public class A6Q7 {
         for(int i = 0; i < sieve.length; i++){
             i = sieve[i];
         }
-        for(int g = 0; g < sieve.length; g++){
-            System.out.println(sieve[g]);
+        for(int p = 2; p < sieve.length; p++){
+            
         }
     }
 }
