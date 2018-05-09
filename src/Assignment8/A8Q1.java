@@ -38,7 +38,7 @@ public class A8Q1 extends JComponent implements ActionListener {
     Timer gameTimer;
 
     // YOUR GAME VARIABLES WOULD GO HERE
-    
+    Color darkGreen = new Color(0, 102, 0);
 
 
     // GAME VARIABLES END HERE    
@@ -83,14 +83,25 @@ public class A8Q1 extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE\
-        // make dinosaur
+        // set color to green
         g.setColor(Color.GREEN);
+        // make body of dinosaur
         g.fillOval(300, 200, 100, 50);
         g.fillRect(300, 230, 50, 100);
         g.fillOval(300, 270, 50, 100);
-        
-		
-		
+        g.fillOval(50, 295, 300, 100);
+        g.fillRect(75, 370, 50, 100);
+        g.fillRect(275, 370, 50, 100);
+        // change color for feet
+        g.setColor(darkGreen);
+        g.fillOval(73, 450, 75, 40);
+        g.fillOval(273, 450, 75, 40);
+        // change color for eyes
+        g.setColor(Color.BLACK);
+        // create face of dinosaur
+        g.drawOval(350, 215, 15, 15);
+	g.fillOval(355, 220, 5, 5);
+	
         // GAME DRAWING ENDS HERE
     }
 
