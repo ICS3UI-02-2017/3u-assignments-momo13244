@@ -101,7 +101,7 @@ public class A8Q1 extends JComponent implements ActionListener {
         // create face of dinosaur
         g.drawOval(350, 215, 15, 15);
 	g.fillOval(355, 220, 5, 5);
-	
+	g.fillArc(335, 225, 40, 20, 160, 220);
         // GAME DRAWING ENDS HERE
     }
 
