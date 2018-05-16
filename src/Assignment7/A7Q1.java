@@ -2,28 +2,22 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Assignment6;
-
-import java.util.Scanner;
+package Assignment7;
 
 /**
  *
  * @author elmam0030
  */
-public class A6Q7 {
+public class A7Q1 {
+    
+    public static double circleArea(String[] args){
+        
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // scan
-        Scanner input = new Scanner(System.in);
-
-        int[] sieve = new int[1000];
-        
-        for(int i = 0; i < sieve.length; i++){
-            i = sieve[i];
-        }
         
     }
 }

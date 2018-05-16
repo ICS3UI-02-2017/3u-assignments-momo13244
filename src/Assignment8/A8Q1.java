@@ -1,8 +1,10 @@
 package Assignment8;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
@@ -39,7 +41,10 @@ public class A8Q1 extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     Color darkGreen = new Color(0, 102, 0);
-
+    
+    BasicStroke thickerLine = new BasicStroke(15);
+    
+    BasicStroke normal = new BasicStroke(15);
 
     // GAME VARIABLES END HERE    
 
@@ -79,6 +84,7 @@ public class A8Q1 extends JComponent implements ActionListener {
     // NOTE: This is already double buffered!(helps with framerate/speed)
     @Override
     public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D)g;
         // always clear the screen first!
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
@@ -102,6 +108,9 @@ public class A8Q1 extends JComponent implements ActionListener {
         g.drawOval(350, 215, 15, 15);
 	g.fillOval(355, 220, 5, 5);
 	g.fillArc(335, 225, 40, 20, 160, 220);
+        // make man
+        
+        g.drawLine(ERROR, ERROR, 100, 100);
         // GAME DRAWING ENDS HERE
     }
 
