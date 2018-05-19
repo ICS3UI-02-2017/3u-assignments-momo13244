@@ -28,23 +28,30 @@ public class A7Q8 {
         
         // return the integer to the method
         allDigitsOdd(number);
-        
-        // output the number
-        System.out.println("");
+               
     }
     
     public static int allDigitsOdd(int number){
         
-        // if number is even print false
-        if ((number % 2) == 0 ){
+        // if the number ends with an even number then it is false
+        if ((number % 2) == 0){
             System.out.println("False");
         }
-        // if then number is odd then print true
-        if ((number % 2) != 0){        
-            System.out.println("True");  
-        }       
-        // return the number to the main method
-        return number;       
+        
+        // filter the number by dividing it by ten and checking each number if it even then there will be no remainder
+        if ((number % 2) != 0){           
+           while (number > 1){
+           // remove the last digit by dividing by ten
+           number = number / 10;
+                // if the number is even then print false and break the loop
+                if ((number % 2) == 0){
+                    System.out.println("False");
+                    break;           
+                }
+            }
+            // since the number hase been checked for even numbers then it is true
+            System.out.println("True");
+        }
+        return 0;
     }
-    
 }
