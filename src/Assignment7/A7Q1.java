@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Assignment7;
@@ -8,35 +9,36 @@ import java.util.Scanner;
 
 /**
  *
- * @author elmam0030
+ * @author Mohamad
  */
-public class A7Q1 { 
+public class A7Q1 {
     
-    public static double circleArea(String[] args){
-        
-        
-        // make the calculator for area
-        double Area = Math.pow(rad, 2);
-        
-        
-        
-    }
-
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // scan
+        // Scan
         Scanner input = new Scanner(System.in);
         
-        // ask for radius
+        // Ask for radius
         System.out.println("Enter the radius: ");
         
-        // get radius
+        // get the number
         double rad = input.nextDouble();
         
-        // Output the area
-        System.out.println("The area of the circle is: " + (circleArea(numbers)));
-        
+        // output the area of the circle
+        System.out.println("The area of the circle is: " + (circleArea(rad)));
     }
+    
+    public static double circleArea(double rad){
+        
+        // calculate
+        double circle = Math.pow(rad, 2);
+        // multiply PI by the power radius
+        circle = Math.PI * circle;
+        // return double
+        return circle;
+    }
+    
 }
