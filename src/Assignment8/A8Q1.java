@@ -14,6 +14,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import static java.awt.image.ImageObserver.ERROR;
 import javax.swing.Timer;
 
 /**
@@ -41,11 +42,19 @@ public class A8Q1 extends JComponent implements ActionListener {
 
     // YOUR GAME VARIABLES WOULD GO HERE
     Color darkGreen = new Color(0, 102, 0);
+    Color brown = new Color(102, 51, 0);
+    Color ground = new Color(153, 115, 0);
+    Color lightBlue = new Color(26, 198, 255);
     
     BasicStroke thickerLine = new BasicStroke(15);
     
     BasicStroke normal = new BasicStroke(15);
 
+    int lOfTree1 = 650;
+    int lOfTree2 = 450;
+    int lOfLeave1 = 400;
+    int lOfLeave2 = 600;
+           
     // GAME VARIABLES END HERE    
 
     
@@ -89,13 +98,32 @@ public class A8Q1 extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE\
+        
+        // make the sky
+        g.setColor(lightBlue);
+        g.fillRect(0, 0, WIDTH, 400);
+        g.setColor(ground);    
+        // make the ground
+        g.fillRect(0, 400, WIDTH, 400);
+        
+        // make the trees
+        g.setColor(brown);
+        g.fillRect(lOfTree2, 200, 50, 200);
+        g.fillRect(lOfTree1, 250, 50, 150);
+        g.setColor(darkGreen);
+        g.fillRect(lOfLeave1, 150, 150, 100);
+        g.fillRect(lOfLeave2, 100, 150, 100);
+        
+        
         // set color to green
         g.setColor(Color.GREEN);
+       
         // make body of dinosaur
         g.fillOval(300, 200, 100, 50);
         g.fillRect(300, 230, 50, 100);
         g.fillOval(300, 270, 50, 100);
         g.fillOval(50, 295, 300, 100);
+        // legs       
         g.fillRect(75, 370, 50, 100);
         g.fillRect(275, 370, 50, 100);
         // change color for feet
@@ -110,7 +138,7 @@ public class A8Q1 extends JComponent implements ActionListener {
 	g.fillArc(335, 225, 40, 20, 160, 220);
         
         
-        g.drawLine(ERROR, ERROR, 100, 100);
+        
         // GAME DRAWING ENDS HERE
     }
 
@@ -124,7 +152,14 @@ public class A8Q1 extends JComponent implements ActionListener {
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
-        
+        if(lOfLeave1 != 0){  
+            lOfLeave1 = lOfLeave1 -1;
+            lOfTree1 = lOfTree1 - 1;
+        }
+        if(lOfLeave2 != 0){
+            lOfLeave2 = lOfLeave2 -1;
+            lOfTree2 = lOfTree2 - 1;
+        }
     }
 
     // Used to implement any of the Mouse Actions
