@@ -50,11 +50,12 @@ public class A8Q1 extends JComponent implements ActionListener {
     
     BasicStroke normal = new BasicStroke(15);
 
-    int lOfTree1 = 650;
-    int lOfTree2 = 450;
+    int lOfTree1 = 450;
+    int lOfTree2 = 650;
     int lOfLeave1 = 400;
     int lOfLeave2 = 600;
-           
+    int lOfLegs = 370;    
+    int LOfFeet = 450;
     // GAME VARIABLES END HERE    
 
     
@@ -108,11 +109,11 @@ public class A8Q1 extends JComponent implements ActionListener {
         
         // make the trees
         g.setColor(brown);
-        g.fillRect(lOfTree2, 200, 50, 200);
-        g.fillRect(lOfTree1, 250, 50, 150);
+        g.fillRect(lOfTree1, 200, 50, 200);
+        g.fillRect(lOfTree2, 250, 50, 150);
         g.setColor(darkGreen);
-        g.fillRect(lOfLeave1, 150, 150, 100);
-        g.fillRect(lOfLeave2, 100, 150, 100);
+        g.fillRect(lOfLeave1, 100, 150, 100);
+        g.fillRect(lOfLeave2, 150, 150, 100);
         
         
         // set color to green
@@ -124,12 +125,12 @@ public class A8Q1 extends JComponent implements ActionListener {
         g.fillOval(300, 270, 50, 100);
         g.fillOval(50, 295, 300, 100);
         // legs       
-        g.fillRect(75, 370, 50, 100);
-        g.fillRect(275, 370, 50, 100);
+        g.fillRect(75, lOfLegs, 50, 100);
+        g.fillRect(275, lOfLegs, 50, 100);
         // change color for feet
         g.setColor(darkGreen);
-        g.fillOval(73, 450, 75, 40);
-        g.fillOval(273, 450, 75, 40);
+        g.fillOval(73, LOfFeet, 75, 40);
+        g.fillOval(273, LOfFeet, 75, 40);
         // change color for eyes
         g.setColor(Color.BLACK);
         // create face of dinosaur
@@ -152,14 +153,22 @@ public class A8Q1 extends JComponent implements ActionListener {
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
-        if(lOfLeave1 != 0){  
-            lOfLeave1 = lOfLeave1 -1;
-            lOfTree1 = lOfTree1 - 1;
+        
+        if(lOfLeave1 != -150){  
+            lOfLeave1 = lOfLeave1 -5;
+            lOfTree1 = lOfTree1 - 5;
+        } else {
+            lOfLeave1 = WIDTH + 150; 
+            lOfTree1 = WIDTH + 200;
         }
-        if(lOfLeave2 != 0){
-            lOfLeave2 = lOfLeave2 -1;
-            lOfTree2 = lOfTree2 - 1;
-        }
+        
+        if(lOfLeave2 != -150){  
+            lOfLeave2 = lOfLeave2 -5;
+            lOfTree2 = lOfTree2 - 5;
+        } else {
+            lOfLeave2 = WIDTH + 150;
+            lOfTree2 = WIDTH + 200;
+        }    
     }
 
     // Used to implement any of the Mouse Actions
