@@ -2,6 +2,7 @@ package FinalGame;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import javax.swing.Timer;
 
+
 /**
  *
  * @author elmam0030
@@ -25,7 +27,7 @@ public class Game extends JComponent implements ActionListener {
     static final int HEIGHT = 600;
 
     //Title of the window
-    String title = "My Game";
+    String title = "Cookie Clicker";
 
     // sets the framerate and delay for our game
     // this calculates the number of milliseconds per frame
@@ -42,7 +44,9 @@ public class Game extends JComponent implements ActionListener {
     // create the money counter
     int balance = 0;
     
-    
+    int amountOfClickers = 1;
+    Font biggerFont = new Font("arial", Font.BOLD, 36);
+
     
 
 
@@ -61,7 +65,7 @@ public class Game extends JComponent implements ActionListener {
         frame.add(this);
 
         // sets some options and size of the window automatically
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         // shows the window to the user
@@ -88,10 +92,15 @@ public class Game extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
+        g.setColor(Color.BLUE);
+        g.fillRect(0, 0, WIDTH, HEIGHT);
+          
+        
         g.setColor(Color.GREEN);
         g.fillRect(325, 225, 100, 100);
 	
         g.setColor(Color.red);
+        g.setFont(biggerFont);
 	g.drawString(String.valueOf(balance), 200, 200);
         // GAME DRAWING ENDS HERE
     }
@@ -100,13 +109,21 @@ public class Game extends JComponent implements ActionListener {
     // This is run before the game loop begins!
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
-
+        clicker(balance);
     }
 
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
         
+    }
+    
+    public int clicker(int balance){
+        
+        while (amountOfClickers > 0){
+            balance = amountOfClickers + 1;
+        }
+        return balance;
     }
 
     // Used to implement any of the Mouse Actions
@@ -117,7 +134,7 @@ public class Game extends JComponent implements ActionListener {
         public void mousePressed(MouseEvent e) {
             int mouseX = e.getX();
             int mouseY = e.getY();
-            if (mouseY > 225 || mouseX > 325 || mouseY > 300 || mouseX > 400){
+            if (mouseY < 300 && mouseX < 400 && mouseY > 225 && mouseX > 325){
                 balance = balance + 1;
             }
         }
