@@ -120,9 +120,7 @@ public class Game extends JComponent implements ActionListener {
     
     public int clicker(int balance){
         
-        while (amountOfClickers > 0){
-            balance = amountOfClickers + 1;
-        }
+        
         return balance;
     }
 
