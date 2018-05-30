@@ -44,10 +44,10 @@ public class Game extends JComponent implements ActionListener {
     // create the money counter
     int balance = 0;
     
-    int amountOfClickers = 1;
+    int amountOfClickers = 0;
     Font biggerFont = new Font("arial", Font.BOLD, 36);
 
-    
+    long lastTime = 0;
 
 
     // GAME VARIABLES END HERE    
@@ -98,10 +98,13 @@ public class Game extends JComponent implements ActionListener {
         
         g.setColor(Color.GREEN);
         g.fillRect(325, 225, 100, 100);
-	
+	g.fillRect(100, 100, 50, 50);
+        
         g.setColor(Color.red);
         g.setFont(biggerFont);
-	g.drawString(String.valueOf(balance), 200, 200);
+	g.drawString(String.valueOf(balance), 350, 200);
+        g.drawString(String.valueOf(amountOfClickers), 100, 100);
+
         // GAME DRAWING ENDS HERE
     }
 
@@ -109,19 +112,24 @@ public class Game extends JComponent implements ActionListener {
     // This is run before the game loop begins!
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
-        clicker(balance);
+        
     }
-
+    
     // The main game loop
     // In here is where all the logic for my game will go
     public void gameLoop() {
         
+         if (amountOfClickers > 1){
+             clicker();
+         }
     }
     
-    public int clicker(int balance){
-        
-        
-        return balance;
+    public void clicker(){
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + 1;
+            lastTime = System.currentTimeMillis();
+        }  
+              
     }
 
     // Used to implement any of the Mouse Actions
@@ -134,6 +142,9 @@ public class Game extends JComponent implements ActionListener {
             int mouseY = e.getY();
             if (mouseY < 300 && mouseX < 400 && mouseY > 225 && mouseX > 325){
                 balance = balance + 1;
+            }
+            if (mouseY < 150 && mouseX < 150 && mouseY > 100 && mouseX > 100){
+                amountOfClickers = amountOfClickers +1;
             }
         }
 
