@@ -1,9 +1,11 @@
 package FinalGame;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
@@ -23,8 +25,8 @@ import javax.swing.Timer;
 public class Game extends JComponent implements ActionListener {
 
     // Height and Width of our game
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH = 1280;
+    static final int HEIGHT = 800;
 
     //Title of the window
     String title = "Cookie Clicker";
@@ -44,11 +46,43 @@ public class Game extends JComponent implements ActionListener {
     // create the money counter
     int balance = 0;
     
+    Color brown = new Color(153, 102, 0);
+    Color dBrown = new Color(77, 38, 0);
+    
+    BasicStroke thickerLine = new BasicStroke(5);
+    
     int amountOfClickers = 0;
-    Font biggerFont = new Font("arial", Font.BOLD, 36);
-
+    Font biggerFont = new Font("Arial", Font.BOLD, 36);
+    
+    // create coordinates for all parts of cookie
+    int cookieX = 540;
+    int cookieY = 300;
+    int cookieX1 = 200;
+    int chipX1 = 590;
+    int chipY1 = 350;
+    int chipX2 = 580;
+    int chipY2 = 420;
+    int chipX3 = 690;
+    int chipY3 = 390;
+    int chipX4 = 660;
+    int chipY4 = 460;
+    int chipX5 = 660;
+    int chipY5 = 360;
+    int chipX6 = 640;
+    int chipY6 = 410;
+    int chipX7 = 640;
+    int chipY7 = 330;
+    int chipX8 = 600;
+    int chipY8 = 460;
+    int chipX9 = 580;
+    int chipY9 = 380;
+    int chipXY = 20;
+    
+    
+    
     long lastTime = 0;
-
+    
+    
 
     // GAME VARIABLES END HERE    
 
@@ -88,21 +122,37 @@ public class Game extends JComponent implements ActionListener {
     // NOTE: This is already double buffered!(helps with framerate/speed)
     @Override
     public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D)g;
         // always clear the screen first!
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
         g.setColor(Color.BLUE);
         g.fillRect(0, 0, WIDTH, HEIGHT);
-          
         
-        g.setColor(Color.GREEN);
-        g.fillRect(325, 225, 100, 100);
+  
+        
+        g.setColor(brown);
+        g.fillOval(cookieX, cookieY, cookieX1, cookieX1);       
+        g.setColor(Color.BLACK);
+        g2d.setStroke(thickerLine);
+        g.drawOval(cookieX, cookieY, cookieX1, cookieX1);
 	g.fillRect(100, 100, 50, 50);
+        g.setColor(dBrown);
+        g.fillOval(chipX1, chipY1, chipXY, chipXY);
+        g.fillOval(chipX2, chipY2, chipXY, chipXY);
+        g.fillOval(chipX3, chipY3, chipXY, chipXY);
+        g.fillOval(chipX4, chipY4, chipXY, chipXY);
+        g.fillOval(chipX5, chipY5, chipXY, chipXY);
+        g.fillOval(chipX6, chipY6, chipXY, chipXY);
+        g.fillOval(chipX7, chipY7, chipXY, chipXY);
+        g.fillOval(chipX8, chipY8, chipXY, chipXY);
+        g.fillOval(chipX9, chipY9, chipXY, chipXY);
         
-        g.setColor(Color.red);
+        
+        g.setColor(Color.WHITE);
         g.setFont(biggerFont);
-	g.drawString(String.valueOf(balance), 350, 200);
+	g.drawString(String.valueOf(balance), 630, 150);
         g.drawString(String.valueOf(amountOfClickers), 100, 100);
 
         // GAME DRAWING ENDS HERE
@@ -119,12 +169,15 @@ public class Game extends JComponent implements ActionListener {
     // In here is where all the logic for my game will go
     public void gameLoop() {
         
-         if (amountOfClickers > 1){
+         if (amountOfClickers >= 1){
              clicker();
          }
+         
+         
     }
     
     public void clicker(){
+        
         if (System.currentTimeMillis() > lastTime + 1000 ){
             balance = balance + 1;
             lastTime = System.currentTimeMillis();
@@ -135,13 +188,36 @@ public class Game extends JComponent implements ActionListener {
     // Used to implement any of the Mouse Actions
     private class Mouse extends MouseAdapter {
 
+        
         // if a mouse button has been pressed down
         @Override
         public void mousePressed(MouseEvent e) {
             int mouseX = e.getX();
             int mouseY = e.getY();
-            if (mouseY < 300 && mouseX < 400 && mouseY > 225 && mouseX > 325){
+            if (mouseY < 500 && mouseX < 740 && mouseY > 300 && mouseX > 540){
                 balance = balance + 1;
+                cookieX = 540 + 10;
+                cookieY = 300 + 10;
+                cookieX1 = 200 - 20;
+                chipX1 = 590 - 5;
+                chipY1 = 350 - 5;
+                chipX2 = 580 - 5;
+                chipY2 = 420 - 5;
+                chipX3 = 690 - 5;
+                chipY3 = 390 - 5;
+                chipX4 = 660 - 5;
+                chipY4 = 460 - 5;
+                chipX5 = 660 - 5;
+                chipY5 = 360 - 5;
+                chipX6 = 640 - 5;
+                chipY6 = 410 - 5;
+                chipX7 = 640 - 5;
+                chipY7 = 330 - 5;
+                chipX8 = 600 - 5;
+                chipY8 = 460 - 5;
+                chipX9 = 580 - 5;
+                chipY9 = 380 - 5;
+                chipXY = 20 - 5;
             }
             if (mouseY < 150 && mouseX < 150 && mouseY > 100 && mouseX > 100){
                 amountOfClickers = amountOfClickers +1;
@@ -151,7 +227,33 @@ public class Game extends JComponent implements ActionListener {
         // if a mouse button has been released
         @Override
         public void mouseReleased(MouseEvent e) {
-
+            int mouseX = e.getX();
+            int mouseY = e.getY();
+            if (mouseY < 500 && mouseX < 740 && mouseY > 300 && mouseX > 540){
+                
+                cookieX = 540;
+                cookieY = 300;
+                cookieX1 = 200;
+                chipX1 = 590;
+                chipY1 = 350;
+                chipX2 = 580;
+                chipY2 = 420;
+                chipX3 = 690;
+                chipY3 = 390;
+                chipX4 = 660;
+                chipY4 = 460;
+                chipX5 = 660;
+                chipY5 = 360;
+                chipX6 = 640;
+                chipY6 = 410;
+                chipX7 = 640;
+                chipY7 = 330;
+                chipX8 = 600;
+                chipY8 = 460;
+                chipX9 = 580;
+                chipY9 = 380;
+                chipXY = 20;
+            }
         }
 
         // if the scroll wheel has been moved
@@ -163,7 +265,7 @@ public class Game extends JComponent implements ActionListener {
         // if the mouse has moved positions
         @Override
         public void mouseMoved(MouseEvent e) {
-
+            
         }
     }
 
