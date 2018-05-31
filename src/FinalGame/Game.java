@@ -48,11 +48,23 @@ public class Game extends JComponent implements ActionListener {
     
     Color brown = new Color(153, 102, 0);
     Color dBrown = new Color(77, 38, 0);
+    Color gray = new Color (192,192,192);
+    Color backGround = new Color(51, 187, 255);
     
     BasicStroke thickerLine = new BasicStroke(5);
     
     int amountOfClickers = 0;
+    int amountOfGrandmas = 0;
+    int amountOfBakerys = 0;
+    int amountOfFactories = 0;
+    int amountOfCookieF = 0;
+    int amountOfCookieL = 0;
+    int amountofCookieC = 0;
+    int amountOfGarys = 0;
+    
+    
     Font biggerFont = new Font("Arial", Font.BOLD, 36);
+    Font biggestFont = new Font("Arial", Font.BOLD, 48);
     
     // create coordinates for all parts of cookie
     int cookieX = 540;
@@ -127,7 +139,7 @@ public class Game extends JComponent implements ActionListener {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
-        g.setColor(Color.BLUE);
+        g.setColor(backGround);
         g.fillRect(0, 0, WIDTH, HEIGHT);
         
   
@@ -137,7 +149,7 @@ public class Game extends JComponent implements ActionListener {
         g.setColor(Color.BLACK);
         g2d.setStroke(thickerLine);
         g.drawOval(cookieX, cookieY, cookieX1, cookieX1);
-	g.fillRect(100, 100, 50, 50);
+	
         g.setColor(dBrown);
         g.fillOval(chipX1, chipY1, chipXY, chipXY);
         g.fillOval(chipX2, chipY2, chipXY, chipXY);
@@ -149,11 +161,67 @@ public class Game extends JComponent implements ActionListener {
         g.fillOval(chipX8, chipY8, chipXY, chipXY);
         g.fillOval(chipX9, chipY9, chipXY, chipXY);
         
+        // Make the shop menu
+        g.setColor(gray);
+        // Clicker
+        g.fillRect(1, 1, 250, 100); 
+        // Grandma
+        g.fillRect(1, 100, 250, 100);
+        // Bakery
+        g.fillRect(1, 200, 250, 100);
+        // Factory
+        g.fillRect(1, 300, 250, 100);
+        // Cookie Farm
+        g.fillRect(1, 400, 250, 100);
+        // Cookie Lab
+        g.fillRect(1, 500, 250, 100);
+        // Cookie Cloner
+        g.fillRect(1, 600, 250, 100);
+        // gary
+        g.fillRect(1, 700, 250, 100);
         
+        // outline boxes
+        g.setColor(Color.BLACK);
+        g.drawRect(1, 1, 250, 100);
+        g.drawRect(1, 100, 250, 100);
+        g.drawRect(1, 200, 250, 100);
+        g.drawRect(1, 300, 250, 100);
+        g.drawRect(1, 400, 250, 100);
+        g.drawRect(1, 500, 250, 100);
+        g.drawRect(1, 600, 250, 100);
+        g.drawRect(1, 700, 250, 100);
+        
+        // draw the shop names
+        g.setFont(biggestFont);
+        g.drawString("Clicker", 10, 100);
+        g.drawString("Grandma", 10, 200);
+        g.drawString("Bakery", 10, 300);
+        g.drawString("Factory", 10, 400);
+        g.drawString("Cookie Farm", 10, 500);
+        g.drawString("Cookie Lab", 10, 600);
+        g.drawString("Cookie Cloner", 10, 700);
+        g.drawString("Gary", 10, 800);
+        
+        
+        
+        
+        
+        
+        // draw shop integers
         g.setColor(Color.WHITE);
         g.setFont(biggerFont);
 	g.drawString(String.valueOf(balance), 630, 150);
-        g.drawString(String.valueOf(amountOfClickers), 100, 100);
+        g.drawString(String.valueOf(amountOfClickers), 20, 40);
+        g.drawString(String.valueOf(amountOfGrandmas), 20, 140);
+        g.drawString(String.valueOf(amountOfBakerys), 20, 240);
+        g.drawString(String.valueOf(amountOfFactories), 20, 340);
+        g.drawString(String.valueOf(amountOfCookieF), 20, 440);
+        g.drawString(String.valueOf(amountOfCookieL), 20, 540);
+        g.drawString(String.valueOf(amountofCookieC), 20, 640);
+        g.drawString(String.valueOf(amountOfGarys), 20, 740);
+        
+
+
 
         // GAME DRAWING ENDS HERE
     }
@@ -199,27 +267,27 @@ public class Game extends JComponent implements ActionListener {
                 cookieX = 540 + 10;
                 cookieY = 300 + 10;
                 cookieX1 = 200 - 20;
-                chipX1 = 590 - 5;
-                chipY1 = 350 - 5;
-                chipX2 = 580 - 5;
-                chipY2 = 420 - 5;
-                chipX3 = 690 - 5;
-                chipY3 = 390 - 5;
-                chipX4 = 660 - 5;
-                chipY4 = 460 - 5;
-                chipX5 = 660 - 5;
-                chipY5 = 360 - 5;
-                chipX6 = 640 - 5;
-                chipY6 = 410 - 5;
-                chipX7 = 640 - 5;
-                chipY7 = 330 - 5;
-                chipX8 = 600 - 5;
-                chipY8 = 460 - 5;
-                chipX9 = 580 - 5;
-                chipY9 = 380 - 5;
+                chipX1 = 590 + 5;
+                chipY1 = 350 + 5;
+                chipX2 = 580 + 5;
+                chipY2 = 420 + 5;
+                chipX3 = 690 + 5;
+                chipY3 = 390 + 5;
+                chipX4 = 660 + 5;
+                chipY4 = 460 + 5;
+                chipX5 = 660 + 5;
+                chipY5 = 360 + 5;
+                chipX6 = 640 + 5;
+                chipY6 = 410 + 5;
+                chipX7 = 640 + 5;
+                chipY7 = 330 + 5;
+                chipX8 = 600 + 5;
+                chipY8 = 460 + 5;
+                chipX9 = 580 + 5;
+                chipY9 = 380 + 5;
                 chipXY = 20 - 5;
             }
-            if (mouseY < 150 && mouseX < 150 && mouseY > 100 && mouseX > 100){
+            if (mouseY < 100 && mouseX < 250 && mouseY > 1 && mouseX > 1){
                 amountOfClickers = amountOfClickers +1;
             }
         }
