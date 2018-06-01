@@ -44,7 +44,7 @@ public class Game extends JComponent implements ActionListener {
     // YOUR GAME VARIABLES WOULD GO HERE
     
     // create the money counter
-    int balance = 0;
+    int balance = 50000;
     
     Color brown = new Color(153, 102, 0);
     Color dBrown = new Color(77, 38, 0);
@@ -53,14 +53,25 @@ public class Game extends JComponent implements ActionListener {
     
     BasicStroke thickerLine = new BasicStroke(5);
     
+    // create integers for amount of Cookie makers owned
     int amountOfClickers = 0;
     int amountOfGrandmas = 0;
     int amountOfBakerys = 0;
-    int amountOfFactories = 0;
     int amountOfCookieF = 0;
+    int amountOfFactories = 0;
     int amountOfCookieL = 0;
-    int amountofCookieC = 0;
+    int amountOfCookieC = 0;
     int amountOfGarys = 0;
+    
+    // create integers for cost of creaters
+    int costOfClicker = 10;
+    int costOfGrandma = 100;
+    int costOfBakery = 500;
+    int costOfCookieF = 1000;
+    int costOfFactories = 5000;
+    int costOfCookieL = 10000;
+    int costOfCookieC = 50000;
+    int costOfGary = 100000;
     
     
     Font biggerFont = new Font("Arial", Font.BOLD, 36);
@@ -90,6 +101,15 @@ public class Game extends JComponent implements ActionListener {
     int chipY9 = 380;
     int chipXY = 20;
     
+    // create integer for increase of cookie production
+    int addedC = 1;
+    int addedC2 = 10;
+    int addedC3 = 10;
+    int addedC4 = 10;
+    int addedC5 = 10;
+    int addedC6 = 10;
+    int addedC7 = 10;
+    int addedC8 = 10;
     
     
     long lastTime = 0;
@@ -150,6 +170,7 @@ public class Game extends JComponent implements ActionListener {
         g2d.setStroke(thickerLine);
         g.drawOval(cookieX, cookieY, cookieX1, cookieX1);
 	
+        
         g.setColor(dBrown);
         g.fillOval(chipX1, chipY1, chipXY, chipXY);
         g.fillOval(chipX2, chipY2, chipXY, chipXY);
@@ -164,43 +185,43 @@ public class Game extends JComponent implements ActionListener {
         // Make the shop menu
         g.setColor(gray);
         // Clicker
-        g.fillRect(1, 1, 250, 100); 
+        g.fillRect(1, 1, 350, 100); 
         // Grandma
-        g.fillRect(1, 100, 250, 100);
+        g.fillRect(1, 100, 350, 100);
         // Bakery
-        g.fillRect(1, 200, 250, 100);
-        // Factory
-        g.fillRect(1, 300, 250, 100);
+        g.fillRect(1, 200, 350, 100);
         // Cookie Farm
-        g.fillRect(1, 400, 250, 100);
+        g.fillRect(1, 300, 350, 100);
+        // Factory
+        g.fillRect(1, 400, 350, 100);
         // Cookie Lab
-        g.fillRect(1, 500, 250, 100);
+        g.fillRect(1, 500, 350, 100);
         // Cookie Cloner
-        g.fillRect(1, 600, 250, 100);
+        g.fillRect(1, 600, 350, 100);
         // gary
-        g.fillRect(1, 700, 250, 100);
+        g.fillRect(1, 700, 350, 100);
         
         // outline boxes
         g.setColor(Color.BLACK);
-        g.drawRect(1, 1, 250, 100);
-        g.drawRect(1, 100, 250, 100);
-        g.drawRect(1, 200, 250, 100);
-        g.drawRect(1, 300, 250, 100);
-        g.drawRect(1, 400, 250, 100);
-        g.drawRect(1, 500, 250, 100);
-        g.drawRect(1, 600, 250, 100);
-        g.drawRect(1, 700, 250, 100);
+        g.drawRect(1, 1, 350, 100);
+        g.drawRect(1, 100, 350, 100);
+        g.drawRect(1, 200, 350, 100);
+        g.drawRect(1, 300, 350, 100);
+        g.drawRect(1, 400, 350, 100);
+        g.drawRect(1, 500, 350, 100);
+        g.drawRect(1, 600, 350, 100);
+        g.drawRect(1, 700, 350, 100);
         
         // draw the shop names
         g.setFont(biggestFont);
         g.drawString("Clicker", 10, 100);
         g.drawString("Grandma", 10, 200);
         g.drawString("Bakery", 10, 300);
-        g.drawString("Factory", 10, 400);
-        g.drawString("Cookie Farm", 10, 500);
+        g.drawString("Cookie Farm", 10, 400);
+        g.drawString("Factory", 10, 500);
         g.drawString("Cookie Lab", 10, 600);
         g.drawString("Cookie Cloner", 10, 700);
-        g.drawString("Gary", 10, 800);
+        g.drawString("Gary", 10, 790);
         
         
         
@@ -211,14 +232,25 @@ public class Game extends JComponent implements ActionListener {
         g.setColor(Color.WHITE);
         g.setFont(biggerFont);
 	g.drawString(String.valueOf(balance), 630, 150);
-        g.drawString(String.valueOf(amountOfClickers), 20, 40);
-        g.drawString(String.valueOf(amountOfGrandmas), 20, 140);
-        g.drawString(String.valueOf(amountOfBakerys), 20, 240);
-        g.drawString(String.valueOf(amountOfFactories), 20, 340);
-        g.drawString(String.valueOf(amountOfCookieF), 20, 440);
-        g.drawString(String.valueOf(amountOfCookieL), 20, 540);
-        g.drawString(String.valueOf(amountofCookieC), 20, 640);
-        g.drawString(String.valueOf(amountOfGarys), 20, 740);
+        g.drawString(String.valueOf(amountOfClickers), 250, 40);
+        g.drawString(String.valueOf(amountOfGrandmas), 250, 140);
+        g.drawString(String.valueOf(amountOfBakerys), 250, 240);
+        g.drawString(String.valueOf(amountOfCookieF), 250, 340);
+        g.drawString(String.valueOf(amountOfFactories), 250, 440);
+        g.drawString(String.valueOf(amountOfCookieL), 250, 540);
+        g.drawString(String.valueOf(amountOfCookieC), 250, 640);
+        g.drawString(String.valueOf(amountOfGarys), 250, 740);
+        
+        // draw costs of each building
+        g.setColor(Color.GREEN);
+        g.drawString(String.valueOf(costOfClicker), 20, 40);
+        g.drawString(String.valueOf(costOfGrandma), 20, 140);
+        g.drawString(String.valueOf(costOfBakery), 20, 240);
+        g.drawString(String.valueOf(costOfCookieF), 20, 340);
+        g.drawString(String.valueOf(costOfFactories), 20, 440);
+        g.drawString(String.valueOf(costOfCookieL), 20, 540);
+        g.drawString(String.valueOf(costOfCookieC), 20, 640);
+        g.drawString(String.valueOf(costOfGary), 20, 740);
         
 
 
@@ -241,13 +273,97 @@ public class Game extends JComponent implements ActionListener {
              clicker();
          }
          
+         if (amountOfGrandmas >= 1){
+             Grandma();
+         }
+         
+         if (amountOfBakerys >= 1){
+             Bakery();
+         }
+         
+         if (amountOfCookieF >= 1){
+             CookieF();
+         }
+         
+         if (amountOfFactories >= 1){
+             Factory();
+         }
+         
+         if (amountOfCookieL >= 1){
+             CookieLab();
+         }
+         
+         if (amountOfCookieC >= 1){
+             CookieCloner();
+         }
          
     }
     
+    // method for cookie generated by clicker
     public void clicker(){
         
         if (System.currentTimeMillis() > lastTime + 1000 ){
-            balance = balance + 1;
+            balance = balance + addedC;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Grandmas
+    public void Grandma(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC2;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Bakerys
+    public void Bakery(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC3;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Cookie Farms
+    public void CookieF(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC4;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Factory
+    public void Factory(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC5;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Cookie Labs
+    public void CookieLab(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC6;
+            lastTime = System.currentTimeMillis();
+        }  
+              
+    }
+    
+    // method for cookie generated by Cookie Labs
+    public void CookieCloner(){
+        
+        if (System.currentTimeMillis() > lastTime + 1000 ){
+            balance = balance + addedC7;
             lastTime = System.currentTimeMillis();
         }  
               
@@ -262,6 +378,7 @@ public class Game extends JComponent implements ActionListener {
         public void mousePressed(MouseEvent e) {
             int mouseX = e.getX();
             int mouseY = e.getY();
+            // click box for cookie
             if (mouseY < 500 && mouseX < 740 && mouseY > 300 && mouseX > 540){
                 balance = balance + 1;
                 cookieX = 540 + 10;
@@ -287,8 +404,91 @@ public class Game extends JComponent implements ActionListener {
                 chipY9 = 380 + 5;
                 chipXY = 20 - 5;
             }
-            if (mouseY < 100 && mouseX < 250 && mouseY > 1 && mouseX > 1){
+            
+            
+            // click box for clicker
+            if (mouseY < 100 && mouseX < 350 && mouseY > 1 && mouseX > 1 && balance >= costOfClicker){
+                // add clicker to amount of clickers
                 amountOfClickers = amountOfClickers +1;
+                // take away cost of from the balance
+                balance = balance - costOfClicker;
+                // make it more expensive for next clicker
+                costOfClicker = costOfClicker + 5;
+                // add more amount of cookies made for sec
+                addedC = addedC + 1;
+            }
+            
+            
+            // click box for Grandma
+            if (mouseY < 200 && mouseX < 350 && mouseY > 100 && mouseX > 1 && balance >= costOfGrandma){
+                
+                amountOfGrandmas = amountOfGrandmas +1;
+                
+                balance = balance - costOfGrandma;
+                
+                costOfGrandma = costOfGrandma + 25;
+                
+                addedC2 = addedC2 + 10;
+            }
+            
+            // click box for Bakery
+            if (mouseY < 300 && mouseX < 350 && mouseY > 200 && mouseX > 1 && balance >= costOfBakery){
+                
+                amountOfBakerys = amountOfBakerys +1;
+                
+                balance = balance - costOfBakery;
+                
+                costOfBakery = costOfBakery + 50;
+                
+                addedC3 = addedC3 + 30;
+            }
+            
+            // click box for Cookie Farm
+            if (mouseY < 400 && mouseX < 350 && mouseY > 300 && mouseX > 1 && balance >= costOfCookieF){
+                
+                amountOfCookieF = amountOfCookieF +1;
+                
+                balance = balance - costOfCookieF;
+                
+                costOfCookieF = costOfCookieF + 100;
+                
+                addedC4 = addedC4 + 50;
+            }
+            
+            // click box for Factory
+            if (mouseY < 500 && mouseX < 350 && mouseY > 400 && mouseX > 1 && balance >= costOfFactories){
+                
+                amountOfFactories = amountOfFactories +1;
+                
+                balance = balance - costOfFactories;
+                
+                costOfFactories = costOfFactories + 150;
+                
+                addedC5 = addedC5 + 100;
+            }
+            
+            // click box for Cookie Lab
+            if (mouseY < 600 && mouseX < 350 && mouseY > 500 && mouseX > 1 && balance >= costOfCookieL){
+                
+                amountOfCookieL = amountOfCookieL+1;
+                
+                balance = balance - costOfCookieL;
+                
+                costOfCookieL = costOfCookieL + 300;
+                
+                addedC6 = addedC6 + 200;
+            }
+            
+            // click box for Cookie Cloner
+            if (mouseY < 700 && mouseX < 350 && mouseY > 600 && mouseX > 1 && balance >= costOfCookieC){
+                
+                amountOfCookieC = amountOfCookieC+1;
+                
+                balance = balance - costOfCookieC;
+                
+                costOfCookieC = costOfCookieC + 500;
+                
+                addedC6 = addedC6 + 400;
             }
         }
 
