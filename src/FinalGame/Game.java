@@ -45,6 +45,8 @@ public class Game extends JComponent implements ActionListener {
     
     // create the money counter
     double balance = 50000;
+    // create rounded money counter
+    double balance2 = 5000;
     
     Color brown = new Color(153, 102, 0);
     Color dBrown = new Color(77, 38, 0);
@@ -54,38 +56,25 @@ public class Game extends JComponent implements ActionListener {
     BasicStroke thickerLine = new BasicStroke(5);
     
     // create integers for amount of Cookie makers owned
-    int amountOfClickers = 0;
-    int amountOfGrandmas = 0;
-    int amountOfBakerys = 0;
-    int amountOfCookieF = 0;
-    int amountOfFactories = 0;
-    int amountOfCookieL = 0;
-    int amountOfCookieC = 0;
-    int amountOfGarys = 0;
+    double amountOfClickers = 0;
+    double amountOfGrandmas = 0;
+    double amountOfBakerys = 0;
+    double amountOfCookieF = 0;
     
-    // create base price of creators
-    int costOfClicker = 15;
-    int costOfGrandma = 100;
-    int costOfBakery = 500;
-    int costOfCookieF = 1000;
-    int costOfFactories = 5000;
-    int costOfCookieL = 10000;
-    int costOfCookieC = 50000;
-    int costOfGary = 100000;
     
     // create prices of creators
-    int costOfClicker1 = 15;
-    int costOfGrandma1 = 100;
-    int costOfBakery1 = 500;
-    int costOfCookieF1 = 1000;
-    int costOfFactories1 = 5000;
-    int costOfCookieL1 = 10000;
-    int costOfCookieC1 = 50000;
-    int costOfGary1 = 100000;
+    double costOfClicker = 15;
+    double costOfGrandma = 100;
+    double costOfBakery = 500;
+    double costOfCookieF = 1000;
+    
+    
+    // make rounded doubles
+    
     
     
     Font biggerFont = new Font("Arial", Font.BOLD, 36);
-    Font biggestFont = new Font("Arial", Font.BOLD, 48);
+    Font biggestFont = new Font("Arial", Font.BOLD, 78);
     
     // create coordinates for all parts of cookie
     int cookieX = 540;
@@ -117,19 +106,14 @@ public class Game extends JComponent implements ActionListener {
     int addedC3 = 200;
     int addedC4 = 700;
     int addedC5 = 3000;
-    int addedC6 = 7000;
-    int addedC7 = 20000;
-    int addedC8 = 75000;
+    
     
     
     long lastTime = 0;
     long lastTime2 = 0;
     long lastTime3 = 0;
     long lastTime4 = 0;
-    long lastTime5 = 0;
-    long lastTime6 = 0;
-    long lastTime7 = 0;
-    long lastTime8 = 0;
+    
     
     
     
@@ -202,44 +186,26 @@ public class Game extends JComponent implements ActionListener {
         
         // Make the shop menu
         g.setColor(gray);
-        // Clicker
-        g.fillRect(1, 1, 350, 100); 
-        // Grandma
-        g.fillRect(1, 100, 350, 100);
-        // Bakery
-        g.fillRect(1, 200, 350, 100);
-        // Cookie Farm
-        g.fillRect(1, 300, 350, 100);
-        // Factory
-        g.fillRect(1, 400, 350, 100);
-        // Cookie Lab
-        g.fillRect(1, 500, 350, 100);
-        // Cookie Cloner
-        g.fillRect(1, 600, 350, 100);
-        // gary
-        g.fillRect(1, 700, 350, 100);
+        // background gary 
+        g.fillRect(1, 1, 350, HEIGHT); 
+        
+        
         
         // outline boxes
         g.setColor(Color.BLACK);
-        g.drawRect(1, 1, 350, 100);
-        g.drawRect(1, 100, 350, 100);
-        g.drawRect(1, 200, 350, 100);
-        g.drawRect(1, 300, 350, 100);
-        g.drawRect(1, 400, 350, 100);
-        g.drawRect(1, 500, 350, 100);
-        g.drawRect(1, 600, 350, 100);
-        g.drawRect(1, 700, 350, 100);
+        g.drawRect(1, 1, 350, 200);
+        g.drawRect(1, 200, 350, 200);
+        g.drawRect(1, 400, 350, 200);
+        g.drawRect(1, 600, 350, 200);
+        
         
         // draw the shop names
         g.setFont(biggestFont);
-        g.drawString("Clicker", 10, 100);
-        g.drawString("Grandma", 10, 200);
-        g.drawString("Bakery", 10, 300);
-        g.drawString("Cookie Farm", 10, 400);
-        g.drawString("Factory", 10, 500);
-        g.drawString("Cookie Lab", 10, 600);
-        g.drawString("Cookie Cloner", 10, 700);
-        g.drawString("Gary", 10, 790);
+        g.drawString("Clicker", 10, 200);
+        g.drawString("Grandma", 10, 400);
+        g.drawString("Bakery", 10, 600);
+        g.drawString("Cookie Farm", 10, 800);
+        
         
         
         
@@ -249,26 +215,19 @@ public class Game extends JComponent implements ActionListener {
         // draw shop integers
         g.setColor(Color.WHITE);
         g.setFont(biggerFont);
-	g.drawString(String.valueOf(balance), 630, 150);
-        g.drawString(String.valueOf(amountOfClickers), 250, 40);
-        g.drawString(String.valueOf(amountOfGrandmas), 250, 140);
-        g.drawString(String.valueOf(amountOfBakerys), 250, 240);
-        g.drawString(String.valueOf(amountOfCookieF), 250, 340);
-        g.drawString(String.valueOf(amountOfFactories), 250, 440);
-        g.drawString(String.valueOf(amountOfCookieL), 250, 540);
-        g.drawString(String.valueOf(amountOfCookieC), 250, 640);
-        g.drawString(String.valueOf(amountOfGarys), 250, 740);
+	g.drawString(String.valueOf((int)balance2), 630, 150);
+        g.drawString(String.valueOf((int)amountOfClickers), 250, 40);
+        g.drawString(String.valueOf((int)amountOfGrandmas), 250, 240);
+        g.drawString(String.valueOf((int)amountOfBakerys), 250, 440);
+        g.drawString(String.valueOf((int)amountOfCookieF), 250, 640);
+        
         
         // draw costs of each building
         g.setColor(Color.GREEN);
-        g.drawString(String.valueOf(costOfClicker), 20, 40);
-        g.drawString(String.valueOf(costOfGrandma), 20, 140);
-        g.drawString(String.valueOf(costOfBakery), 20, 240);
-        g.drawString(String.valueOf(costOfCookieF), 20, 340);
-        g.drawString(String.valueOf(costOfFactories), 20, 440);
-        g.drawString(String.valueOf(costOfCookieL), 20, 540);
-        g.drawString(String.valueOf(costOfCookieC), 20, 640);
-        g.drawString(String.valueOf(costOfGary), 20, 740);
+        g.drawString(String.valueOf((int)costOfClicker), 20, 40);
+        g.drawString(String.valueOf((int)costOfGrandma), 20, 240);
+        g.drawString(String.valueOf((int)costOfBakery), 20, 440);
+        g.drawString(String.valueOf((int)costOfCookieF), 20, 640);
         
 
 
@@ -287,6 +246,8 @@ public class Game extends JComponent implements ActionListener {
     // In here is where all the logic for my game will go
     public void gameLoop() {
         
+        balance2 = Math.round(balance);
+        
         if (System.currentTimeMillis() > lastTime + 1000 ){
                 if (amountOfClickers >= 1){
                 clicker();
@@ -304,21 +265,7 @@ public class Game extends JComponent implements ActionListener {
                 CookieF();
                 }
          
-                if (amountOfFactories >= 1){
-                Factory();
-                }
-         
-                if (amountOfCookieL >= 1){
-                CookieLab();
-                }
-         
-                if (amountOfCookieC >= 1){
-                CookieCloner();
-                }
-         
-                if (amountOfGarys >= 1){
-                Gary();
-                }
+                
             }
     }
     
@@ -326,7 +273,7 @@ public class Game extends JComponent implements ActionListener {
     public void clicker(){
         
         
-            balance = balance + addedC;
+            
             lastTime = System.currentTimeMillis();
           
               
@@ -362,45 +309,7 @@ public class Game extends JComponent implements ActionListener {
               
     }
     
-    // method for cookie generated by Factory
-    public void Factory(){
-        
-        
-            balance = balance + addedC5;
-            lastTime = System.currentTimeMillis();
-         
-              
-    }
     
-    // method for cookie generated by Cookie Labs
-    public void CookieLab(){
-        
-        
-            balance = balance + addedC6;
-            lastTime = System.currentTimeMillis();
-        
-              
-    }
-    
-    // method for cookie generated by Cookie Labs
-    public void CookieCloner(){
-        
-        
-            balance = balance + addedC7;
-            lastTime = System.currentTimeMillis();
-        
-              
-    }
-    
-    // method for cookie generated by Gary
-    public void Gary(){
-        
-        
-            balance = balance + addedC8;
-            lastTime = System.currentTimeMillis();
-         
-              
-    }
 
     // Used to implement any of the Mouse Actions
     private class Mouse extends MouseAdapter {
@@ -440,102 +349,56 @@ public class Game extends JComponent implements ActionListener {
             
             
             // click box for clicker
-            if (mouseY < 100 && mouseX < 350 && mouseY > 1 && mouseX > 1 && balance >= costOfClicker){
+            if (mouseY < 200 && mouseX < 350 && mouseY > 1 && mouseX > 1 && balance >= costOfClicker){
                 // add clicker to amount of clickers
                 amountOfClickers = amountOfClickers +1;
                 // take away cost of from the balance
                 balance = balance - costOfClicker;
                 // make it more expensive for next clicker
-                costOfClicker = costOfClicker + (addedC + 5);
+                costOfClicker = 15 * Math.pow(1.15, amountOfClickers);
                 // add more amount of cookies made for sec
                 addedC = addedC + addedC;
             }
             
             
             // click box for Grandma
-            if (mouseY < 200 && mouseX < 350 && mouseY > 100 && mouseX > 1 && balance >= costOfGrandma){
+            if (mouseY < 400 && mouseX < 350 && mouseY > 200 && mouseX > 1 && balance >= costOfGrandma){
                 
                 amountOfGrandmas = amountOfGrandmas +1;
                 
                 balance = balance - costOfGrandma;
                 
-                costOfGrandma = costOfGrandma + (addedC2 + 25);
+                costOfGrandma = 100 * Math.pow(1.15, amountOfGrandmas);
                 
                 addedC2 = addedC2 + addedC2;
             }
             
             // click box for Bakery
-            if (mouseY < 300 && mouseX < 350 && mouseY > 200 && mouseX > 1 && balance >= costOfBakery){
+            if (mouseY < 600 && mouseX < 350 && mouseY > 400 && mouseX > 1 && balance >= costOfBakery){
                 
                 amountOfBakerys = amountOfBakerys +1;
                 
                 balance = balance - costOfBakery;
                 
-                costOfBakery = costOfBakery + (addedC3 + 200);
-                
+                costOfBakery = 1100 * Math.pow(1.15, amountOfBakerys); 
+                               
                 addedC3 = addedC3 + addedC3;
             }
             
             // click box for Cookie Farm
-            if (mouseY < 400 && mouseX < 350 && mouseY > 300 && mouseX > 1 && balance >= costOfCookieF){
+            if (mouseY < 800 && mouseX < 350 && mouseY > 600 && mouseX > 1 && balance >= costOfCookieF){
                 
                 amountOfCookieF = amountOfCookieF +1;
                 
                 balance = balance - costOfCookieF;
                 
-                costOfCookieF = costOfCookieF + ( (addedC4 / 3) + 700);
+                costOfCookieF = 12000 * Math.pow(1.15, amountOfCookieF); 
                 
                 addedC4 = addedC4 + addedC4;
                 
             }
             
-            // click box for Factory
-            if (mouseY < 500 && mouseX < 350 && mouseY > 400 && mouseX > 1 && balance >= costOfFactories){
-                
-                amountOfFactories = amountOfFactories +1;
-                
-                balance = balance - costOfFactories;
-                
-                costOfFactories = costOfFactories + (addedC5 + 3000);
-                
-                addedC5 = addedC5 + addedC5;
-            }
             
-            // click box for Cookie Lab
-            if (mouseY < 600 && mouseX < 350 && mouseY > 500 && mouseX > 1 && balance >= costOfCookieL){
-                
-                amountOfCookieL = amountOfCookieL+1;
-                
-                balance = balance - costOfCookieL;
-                
-                costOfCookieL = costOfCookieL + (addedC6 + 7000);
-                
-                addedC6 = addedC6 + addedC6;
-            }
-            
-            // click box for Cookie Cloner
-            if (mouseY < 700 && mouseX < 350 && mouseY > 600 && mouseX > 1 && balance >= costOfCookieC){
-                
-                amountOfCookieC = amountOfCookieC+1;
-                
-                balance = balance - costOfCookieC;
-                
-                costOfCookieC = costOfCookieC + (addedC7 + 20000);
-                
-                addedC7 = addedC7 + addedC7;
-            }
-            
-            // click box for Gary
-            if (mouseY < 800 && mouseX < 350 && mouseY > 700 && mouseX > 1 && balance >= costOfGary){
-                
-                amountOfGarys = amountOfGarys +1;
-                
-                balance = balance - costOfGary;
-                
-                costOfGary = costOfGary + (addedC8 + 75000);
-                
-                addedC8 = addedC8 + addedC8;
-            }
         }
 
         // if a mouse button has been released
