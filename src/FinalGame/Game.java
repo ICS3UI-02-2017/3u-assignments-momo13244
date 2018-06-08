@@ -68,6 +68,8 @@ public class Game extends JComponent implements ActionListener {
     double costOfBakery = 500;
     double costOfCookieF = 1000;
     
+    double clickCps = 1;
+    
     
     // make rounded doubles
     
@@ -103,10 +105,10 @@ public class Game extends JComponent implements ActionListener {
     
     // create integer for increase of cookie production
     double addedC = 1;
-    double addedC2 = 50;
-    double addedC3 = 200;
-    double addedC4 = 700;
-    double addedC5 = 3000;
+    double addedC2 = 5;
+    double addedC3 = 50;
+    double addedC4 = 500;
+    
     
     
     
@@ -306,7 +308,7 @@ public class Game extends JComponent implements ActionListener {
             int mouseY = e.getY();
             // click box for cookie
             if (mouseY < 500 && mouseX < 740 && mouseY > 300 && mouseX > 540){
-                balance = balance + 1;
+                balance = balance + clickCps;
                 cookieX = 540 + 10;
                 cookieY = 300 + 10;
                 cookieX1 = 200 - 20;
@@ -357,7 +359,10 @@ public class Game extends JComponent implements ActionListener {
                 
                 costOfGrandma = 100 * Math.pow(1.15, amountOfGrandmas);
                 
-                addedC2 = addedC2 + addedC2;
+                if(amountOfGrandmas >= 2){
+                    
+                    addedC2 = addedC2 + 5;
+                }
             }
             
             // click box for Bakery
@@ -369,7 +374,10 @@ public class Game extends JComponent implements ActionListener {
                 
                 costOfBakery = 1100 * Math.pow(1.15, amountOfBakerys); 
                                
-                addedC3 = addedC3 + addedC3;
+                if(amountOfBakerys >= 2){
+                    // add more amount of cookies made for sec
+                    addedC = addedC + 50;
+                }
             }
             
             // click box for Cookie Farm
@@ -381,7 +389,10 @@ public class Game extends JComponent implements ActionListener {
                 
                 costOfCookieF = 12000 * Math.pow(1.15, amountOfCookieF); 
                 
-                addedC4 = addedC4 + addedC4;
+                if(amountOfCookieF >= 2){
+                    // add more amount of cookies made for sec
+                    addedC = addedC + 500;
+                }
                 
             }
             
