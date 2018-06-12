@@ -15,6 +15,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
+import static java.awt.image.ImageObserver.ERROR;
 import javax.swing.Timer;
 
 
@@ -187,12 +188,19 @@ public class Game extends JComponent implements ActionListener {
         g.fillOval(chipX8, chipY8, chipXY, chipXY);
         g.fillOval(chipX9, chipY9, chipXY, chipXY);
         
+        
+         
+        
+        
+        g.setColor(Color.BLACK);
+        // cookie counter box
+        g.fillRect(350, 80, 1000, 100);
+        
         // Make the shop menu
         g.setColor(gray);
         // background gary 
-        g.fillRect(1, 1, 350, HEIGHT); 
-        
-        
+        g.fillRect(1, 1, 350, HEIGHT);
+        g.fillRect(930, 1, 350, HEIGHT);
         
         // outline boxes
         g.setColor(Color.BLACK);
@@ -200,6 +208,10 @@ public class Game extends JComponent implements ActionListener {
         g.drawRect(1, 200, 350, 200);
         g.drawRect(1, 400, 350, 200);
         g.drawRect(1, 600, 350, 200);
+        g.drawRect(930, 1, 350, 200);
+        g.drawRect(930, 200, 350, 200);
+        g.drawRect(930, 400, 350, 200);
+        g.drawRect(930, 600, 350, 200);
         
         
         // draw the shop names
@@ -376,7 +388,7 @@ public class Game extends JComponent implements ActionListener {
                                
                 if(amountOfBakerys >= 2){
                     // add more amount of cookies made for sec
-                    addedC = addedC + 50;
+                    addedC3 = addedC3 + 50;
                 }
             }
             
@@ -391,7 +403,7 @@ public class Game extends JComponent implements ActionListener {
                 
                 if(amountOfCookieF >= 2){
                     // add more amount of cookies made for sec
-                    addedC = addedC + 500;
+                    addedC4 = addedC4 + 500;
                 }
                 
             }
@@ -406,6 +418,7 @@ public class Game extends JComponent implements ActionListener {
             int mouseY = e.getY();
             if (mouseY < 500 && mouseX < 740 && mouseY > 300 && mouseX > 540){
                 
+                // restore coordinates to their original state
                 cookieX = 540;
                 cookieY = 300;
                 cookieX1 = 200;
