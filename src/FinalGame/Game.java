@@ -200,7 +200,7 @@ public class Game extends JComponent implements ActionListener {
         g.setColor(gray);
         // background gary 
         g.fillRect(1, 1, 350, HEIGHT);
-        g.fillRect(930, 1, 350, HEIGHT);
+        
         
         // outline boxes
         g.setColor(Color.BLACK);
@@ -208,10 +208,7 @@ public class Game extends JComponent implements ActionListener {
         g.drawRect(1, 200, 350, 200);
         g.drawRect(1, 400, 350, 200);
         g.drawRect(1, 600, 350, 200);
-        g.drawRect(930, 1, 350, 200);
-        g.drawRect(930, 200, 350, 200);
-        g.drawRect(930, 400, 350, 200);
-        g.drawRect(930, 600, 350, 200);
+        
         
         
         // draw the shop names
